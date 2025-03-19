@@ -4,4 +4,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse('article')
+    name, course, group = "Иннокентий", "3", "3103-О"
+    return render(
+        request,
+        'articles/index.html',
+        context={'name': name,
+                 'course': course,
+                 'group': group},
+    )
